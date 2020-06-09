@@ -15,5 +15,15 @@ const server = app.listen(PORT, () => {
 const io = socketio(server);
 
 io.on('connection', (socket) => {
-  console.log('New web socket connection');
+  socket.emit('message', 'Welcome to DevMeetup Chat');
+
+  socket.broadcast.emit('message', 'A user has joined the chat!');
+
+  socket.on('disconnect', () => {
+    io.emit('message', 'A user has left the chat');
+  });
+
+  socket.on('chatMessage', (message) => {
+    io.emit('message', message);
+  });
 });
