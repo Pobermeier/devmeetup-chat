@@ -1,13 +1,19 @@
 const path = require('path');
 const express = require('express');
-
-const app = express();
+const socketio = require('socket.io');
 
 const PORT = process.env.PORT || 3000;
 
-// Set static folder
+const app = express();
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+  console.log('New web socket connection');
 });
