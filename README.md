@@ -1,6 +1,6 @@
-# A Real-time Chat Application using Express & WebSockets
+# DevMeetup Chat - A Real-time Chat Application using Express & WebSockets
 
-A live chat application using WebSockets and was built with Express and Socket.io. The user can enter a nickname and join a chat room.
+"DevMeetup Chat" is a live chat application using WebSockets and was built with Express and Socket.io. The user can enter a nickname and choose to join one of the available chat rooms. The topics of the rooms are centered around differend programming languages. You can check out a live version of this project [here](https://devmeetup-chat.herokuapp.com/)
 
 ## Project Set-Up
 
